@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 260 190" role="img" class=" id-artwork-akshardham">
+  <title>Original stylized Delhi landmark: akshardham</title>
+  <style>.id-artwork-akshardham{color:var(--id-ink,#173e32)}.id-artwork-akshardham .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-akshardham .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-akshardham{color:var(--id-ink,#edf2e8)}.id-artwork-akshardham .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path class="id-architecture-fill" d="M12 220V211H22V175H238V211H248V220ZM22 175V168H238V175" />
+    <path d="M5 220H255M12 214H248M22 207H238M113 211V188Q130 170 147 188V211M118 211V190Q130 177 142 190V211" />
+    <path class="id-architecture-fill" d="M104 116C96 103 103 86 119 77Q130 70 130 59Q130 70 141 77C157 86 164 103 156 116Z" />
+    <path d="M102 116H158V123H102ZM108 123V143M152 123V143M98 143H162V150H98ZM94 150H166V157H94ZM88 157H172V168H88M130 49V59M126 54H134" />
+    <path class="id-architecture-fill" d="M55 147Q48 135 58 125L70 115L82 125Q92 135 85 147ZM175 147Q168 135 178 125L190 115L202 125Q212 135 205 147Z" />
+    <path d="M52 147H88V153H52ZM58 153V168M82 153V168M172 147H208V153H172ZM178 153V168M202 153V168M70 109V115M190 109V115" />
+    <path class="id-architecture-fill" d="M24 163Q19 153 28 146L37 140L46 146Q55 153 50 163ZM210 163Q205 153 214 146L223 140L232 146Q241 153 236 163Z" />
+    <path d="M22 163H52M212 163H238M28 163V175M46 163V175M216 163V175M234 163V175M38 181V205M55 181V205M72 181V205M89 181V205M171 181V205M188 181V205M205 181V205M222 181V205M31 184H96M164 184H230" />
+    <path d="M40 205V195Q46 184 52 195V205M61 205V195Q67 184 73 195V205M82 205V195Q88 184 94 195V205M166 205V195Q172 184 178 195V205M187 205V195Q193 184 199 195V205M208 205V195Q214 184 220 195V205" opacity=".7" />
+  </g>
+</svg>

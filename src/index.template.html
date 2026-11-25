@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en-IN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{event.name}} · {{event.dates}} · {{event.city}}</title>
+  <meta name="description" content="{{meta.description}}">
+  {{>robots}}
+  <meta name="theme-color" content="#0f3b2e">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{event.name}}">
+  <meta property="og:title" content="{{event.name}} · {{event.dates}} · {{event.city}}">
+  <meta property="og:description" content="{{meta.description}}">
+  {{>og_urls}}
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css?v={{build.version}}">
+  <script>document.documentElement.className = 'js';</script>
+  {{>jsonld}}
+</head>
+<body data-registration="{{registration.state}}" data-signup="{{signup.mode}}" data-event-start="{{event.startISO}}" data-event-end="{{event.endISO}}">
+<a class="skip-link" href="#main">Skip to content</a>
+
+{{>topbar}}
+
+<header class="site-header" data-header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#home" aria-label="{{event.name}}, back to top">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g transform="translate(20 20) rotate(-45) translate(-11 -11)" stroke="currentColor" stroke-width="2" fill="none"><rect class="brand-mark-accent" width="9" height="9"/><rect x="13" width="9" height="9"/><rect y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></g></svg>
+      <span class="brand-text">{{event.name}}<small>{{event.strapline}}</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="menu-label">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      {{>nav}}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{{event.dates}} · {{event.city}} · In person</p>
+        <h1 id="hero-title">{{event.name}}</h1>
+        <p class="hero-tagline"><span>Clinical questions.</span> <span>Shared expertise.</span> <em>Hands-on health data science.</em></p>
+        <p class="hero-intro">{{event.intro}}</p>
+        {{>hero_actions}}
+        <p class="hero-host">Hosted by <strong>{{event.host}}</strong></p>
+      </div>
+
+      <aside class="event-card" aria-label="Event details">
+        <div class="event-card-top">
+          {{>status_pill}}
+          {{>countdown}}
+        </div>
+        <dl class="event-facts">
+          <div>
+            <dt>{{icon:calendar}}<span>When</span></dt>
+            <dd><strong>{{event.dates}}</strong><span>Sunday and Monday · both days finish at {{event.endTime}}</span></dd>
+          </div>
+          <div>
+            <dt>{{icon:pin}}<span>Where</span></dt>
+            <dd><strong>{{event.venueRoom}}</strong><span>{{event.venueName}}, {{event.city}}</span></dd>
+          </div>
+          <div>
+            <dt>{{icon:users}}<span>Who</span></dt>
+            <dd><strong>About 80 participants</strong><span>Medical and data science/engineering, in balanced teams</span></dd>
+          </div>
+          <div>
+            <dt>{{icon:mail}}<span>Registration</span></dt>
+            <dd>{{>registration_line}}</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="skyline" role="img" aria-label="Line drawing of a Delhi skyline with five landmarks and a saffron sun">
+        {{>skyline_desktop}}
+        {{>skyline_mobile}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KEY FACTS ============ -->
+  <section class="stats" aria-label="The event at a glance">
+    <div class="wrap">
+      <ul class="stats-grid">
+        {{>stats}}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker">The idea</p>
+        <h2 id="about-title">A datathon starts with people.</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="prose reveal">
+          <h3 class="h-small">What is a datathon?</h3>
+          <p>A datathon is a short, hands-on event where people with different expertise work together on questions using a shared dataset. In a medical datathon, clinicians contribute knowledge of patient care and clinical decisions, while data scientists and engineers contribute methods for working with data. Teams define a question, investigate it and present what they learned.</p>
+          <h3 class="h-small">Our approach</h3>
+          <p>India Datathon puts clinical reasoning and collaboration at the center of the work. Teams will question what the data represent, what they leave out and whether an analysis addresses a useful clinical problem.</p>
+          <p>An event result is a starting point for further investigation. Teams should explain what their findings can support and what would need validation before use in patient care.</p>
+        </div>
+
+        <div class="reveal">
+          <blockquote class="pullquote">
+            <p>The journey matters more than a polished end product: how your team questions the data, learns across disciplines and explains its decisions.</p>
+          </blockquote>
+          <div class="do-card">
+            <h3 class="h-small">What you will do</h3>
+            <ol class="do-steps">
+              <li><strong>Frame</strong><span>a useful clinical question with your team.</span></li>
+              <li><strong>Examine</strong><span>what the data can support.</span></li>
+              <li><strong>Develop</strong><span>an analysis or prototype together.</span></li>
+              <li><strong>Explain</strong><span>the choices you made, the limitations you found, and what further work would be needed.</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="guardrails reveal">
+        <div class="guardrails-head">
+          <h3>Five guardrails for a good question</h3>
+          <p>Teams use these to shape a focused question within the available data.</p>
+        </div>
+        <ol class="guardrail-list">
+          <li><span class="num" aria-hidden="true">01</span><h4>Actionable</h4><p>Connect the question to a decision a clinician or care team can influence.</p></li>
+          <li><span class="num" aria-hidden="true">02</span><h4>Answerable within the event</h4><p>Choose a focused question that the available data and two working days can support.</p></li>
+          <li><span class="num" aria-hidden="true">03</span><h4>Consequential</h4><p>Explain why either a positive or a negative finding would be useful.</p></li>
+          <li><span class="num" aria-hidden="true">04</span><h4>Reproducible and interpretable</h4><p>Make the cohort, methods and reasoning clear enough for someone else to follow.</p></li>
+          <li><span class="num" aria-hidden="true">05</span><h4>Feasible</h4><p>Match the scope to the team’s skills, the available variables and the time.</p></li>
+        </ol>
+      </div>
+
+      <div class="info-cards reveal">
+        <article class="info-card">
+          <div class="info-card-top">{{icon:database}}<span class="pill pill-tba">Details to be announced</span></div>
+          <h3>Data and platform</h3>
+          <p>The event will use a large hospital dataset and an AWS-based platform. The specific dataset, available variables, access requirements and preparation instructions will be announced.</p>
+        </article>
+        <article class="info-card">
+          <div class="info-card-top">{{icon:route}}<span class="pill pill-tba">To be announced</span></div>
+          <h3>Clinical tracks</h3>
+          <p>Specific clinical tracks will be announced. Teams will use the five guardrails to shape focused questions within the available data.</p>
+        </article>
+        <article class="info-card">
+          <div class="info-card-top">{{icon:sparkle}}<span class="pill pill-yes">Encouraged</span></div>
+          <h3>Generative AI</h3>
+          <p>Generative AI use is encouraged. The LLMathon will help teams compare AI responses, question their reliability and decide what counts as evidence. Teams remain responsible for the reasoning behind their work.</p>
+        </article>
+      </div>
+
+      <p class="section-cta"><a class="link-arrow" href="#program">See the two-day program {{icon:arrow-right}}</a></p>
+    </div>
+  </section>
+
+  <!-- ============ PROGRAM ============ -->
+  <section class="section section-sand" id="program" aria-labelledby="program-title">
+    <div class="wrap">
+      <header class="section-head section-head-split">
+        <div>
+          <p class="kicker">The two-day program</p>
+          <h2 id="program-title">Time to think. Space to build.</h2>
+          <p class="lede">One continuous buildathon, from the first team conversation to the final presentation. Teams work on the same clinical question throughout; concepts are introduced along the way and applied as the project develops.</p>
+        </div>
+        <p class="meta-note">Proposed agenda · All times IST (UTC+5:30)</p>
+      </header>
+
+      <div class="program-grid">
+        <div class="agenda">
+          <div class="day-tabs" role="tablist" aria-label="Choose a program day">
+            {{>day_tabs}}
+          </div>
+          {{>day_panels}}
+          <p class="fine">Schedule subject to confirmation. Session leads and detailed tracks will be announced. Meals will be provided.</p>
+        </div>
+
+        <aside class="program-aside">
+          <article class="aside-card aside-card-dark">
+            {{icon:present}}
+            <h3>What to present</h3>
+            <p>Each team will give a five-minute presentation about what it built. Tell the story behind the work: the clinical question, what the data could support, the decisions, disagreements and changes along the way, and how clinical and technical perspectives shaped your approach.</p>
+            <p class="aside-strong">The journey and reasoning matter more than a polished end product.</p>
+          </article>
+          <article class="aside-card">
+            <h3>Good to know</h3>
+            <ul class="tick-list">
+              <li>{{icon:check}}<span>Participants will receive certificates.</span></li>
+              <li>{{icon:check}}<span>Prizes will be awarded to the top three teams; prize details will be announced.</span></li>
+              <li>{{icon:check}}<span>Meals will be provided.</span></li>
+              <li>{{icon:check}}<span>Both days finish at {{event.endTime}}.</span></li>
+            </ul>
+          </article>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FACULTY ============ -->
+  <section class="section" id="faculty" aria-labelledby="faculty-title">
+    <div class="wrap">
+      <header class="section-head section-head-split">
+        <div>
+          <p class="kicker">People &amp; perspectives</p>
+          <h2 id="faculty-title">Across disciplines. Around one table.</h2>
+          <p class="lede">Clinical practice, research and technical expertise. Open a biography below, or select a linked name to visit a LinkedIn or profile page.</p>
+        </div>
+        <button class="btn btn-ghost btn-small" type="button" data-expand-all="faculty" aria-pressed="false">Show all biographies</button>
+      </header>
+      <div class="faculty-grid" data-group="faculty">
+        {{>faculty}}
+      </div>
+      <p class="fine">Proposed faculty roster. Public announcement and biographies await final approval. Institutional affiliations do not imply sponsorship. Portraits are AI-generated illustrations based on profile photographs.</p>
+    </div>
+  </section>
+
+  <!-- ============ PARTICIPATE ============ -->
+  <section class="section section-dark" id="participate" aria-labelledby="participate-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker">Bring your perspective</p>
+        <h2 id="participate-title">Two perspectives. One shared question.</h2>
+        <p class="lede">Students and professionals from medical and data science/engineering backgrounds can apply. We aim to bring together about 80 participants, with an even split between the two backgrounds.</p>
+      </header>
+
+      <div class="track-grid reveal">
+        <article class="track-card">
+          <div class="track-icon">{{icon:pulse}}</div>
+          <h3>Medical participants</h3>
+          <p>No coding experience is required. Bring your understanding of clinical decisions, patient care and how a hospital actually works. Help your team ask questions that matter.</p>
+          <p class="track-tag">No coding required</p>
+        </article>
+        <div class="track-join" aria-hidden="true">×</div>
+        <article class="track-card">
+          <div class="track-icon">{{icon:code}}</div>
+          <h3>Data science &amp; engineering participants</h3>
+          <p>You should know Python (preferred), R or SQL. Bring your skills in working with data and help your team investigate its clinical question carefully.</p>
+          <p class="track-tag">Python (preferred), R or SQL</p>
+        </article>
+      </div>
+
+      <p class="curiosity reveal">Come curious and ready to work together. Ask questions, share what you know and be open to learning from people with different expertise.</p>
+
+      <div class="how-grid reveal">
+        <div>
+          <h3 class="h-small">How it works</h3>
+          {{>how_steps}}
+        </div>
+        <div>
+          <h3 class="h-small">Before you apply</h3>
+          <ul class="know-list">
+            <li>{{icon:pin}}<div><strong>In person only</strong><span>{{event.venueRoom}}, {{event.venueName}}, {{event.city}}.</span></div></li>
+            <li>{{icon:clock}}<div><strong>{{event.dates}}</strong><span>Both days finish at {{event.endTime}}.</span></div></li>
+            <li>{{icon:laptop}}<div><strong>Bring a laptop</strong><span>You will work on an AWS-based platform.</span></div></li>
+            <li>{{icon:meal}}<div><strong>Meals will be provided</strong><span>Included for participants at the event.</span></div></li>
+            <li>{{icon:suitcase}}<div><strong>Travel and accommodation</strong><span>Participants are responsible for their own.</span></div></li>
+            <li>{{icon:award}}<div><strong>Certificates and prizes</strong><span>Certificates for participants; prizes for the top three teams. Prize details will be announced.</span></div></li>
+          </ul>
+          <p class="fine fine-dark">The fee amount and specific dataset will be announced. Teams own the code they create. Any publication or continued data access after the event must be arranged separately by the participants involved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTICIPATION FORM ============ -->
+  <section class="section section-sand" id="apply" aria-labelledby="apply-title">
+    <div class="wrap">
+      <header class="section-head section-head-split">
+        <div>
+          <p class="kicker">Participation form</p>
+          <h2 id="apply-title">{{>apply_title}}</h2>
+          <p class="lede">{{>apply_lede}}</p>
+        </div>
+        {{>apply_badge}}
+      </header>
+      {{>apply_body}}
+    </div>
+  </section>
+
+  <!-- ============ SPONSORS ============ -->
+  <section class="section" id="sponsors" aria-labelledby="sponsors-title">
+    <span id="support" class="anchor-alias"></span>
+    <div class="wrap">
+      <header class="section-head section-head-split">
+        <div>
+          <p class="kicker">Sponsors &amp; partners</p>
+          <h2 id="sponsors-title">Help make the gathering possible.</h2>
+          <p class="lede">{{>sponsors_lede}}</p>
+        </div>
+        {{>sponsors_badge}}
+      </header>
+      {{>sponsors_body}}
+    </div>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section class="section section-sand" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker">Meet us in Delhi</p>
+        <h2 id="visit-title">A shared space for new ideas.</h2>
+      </header>
+      <div class="visit-grid">
+        <article class="venue-card reveal">
+          <p class="venue-host">Hosted by {{event.host}}</p>
+          <h3>{{event.venueRoom}}</h3>
+          <p class="venue-name">{{event.venueName}}</p>
+          <address>{{>address}}</address>
+          <a class="btn btn-primary" href="{{event.mapUrl}}" target="_blank" rel="noopener">Open in Google Maps {{icon:external}}<span class="sr-only"> (opens in a new tab)</span></a>
+          <p class="fine">Gate, floor, arrival directions and accessibility contact will be announced.</p>
+        </article>
+        <div class="venue-art {{>venue_mode}}">
+          {{>venue_art}}
+          <dl class="venue-facts">
+            <div><dt>Dates</dt><dd>{{event.dates}}</dd></div>
+            <div><dt>Finish</dt><dd>{{event.endTime}}, both days</dd></div>
+            <div><dt>Format</dt><dd>In person only</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <header class="section-head section-head-split">
+        <div>
+          <p class="kicker">Questions</p>
+          <h2 id="faq-title">Good to know before you come.</h2>
+        </div>
+        <button class="btn btn-ghost btn-small" type="button" data-expand-all="faq" aria-pressed="false">Show all answers</button>
+      </header>
+      <div class="faq-grid" data-group="faq">
+        {{>faqs}}
+      </div>
+      {{>faq_contact}}
+    </div>
+  </section>
+
+  <!-- ============ SIGNUP ============ -->
+  {{>signup}}
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="#home" aria-label="{{event.name}}, back to top">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><g transform="translate(20 20) rotate(-45) translate(-11 -11)" stroke="currentColor" stroke-width="2" fill="none"><rect class="brand-mark-accent" width="9" height="9"/><rect x="13" width="9" height="9"/><rect y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></g></svg>
+        <span class="brand-text">{{event.name}}<small>{{event.strapline}}</small></span>
+      </a>
+      <p>{{event.dates}} · {{event.city}}, India<br>Hosted by {{event.host}}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <h2>The event</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#visit">Venue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Take part</h2>
+        <ul>
+          <li><a href="#participate">Participate</a></li>
+          <li><a href="#apply">Participation form</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      {{>footer_contact}}
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>{{>footer_note}}</p>
+    <a class="to-top" href="#home">Back to top {{icon:arrow-up}}</a>
+  </div>
+</footer>
+
+<script src="assets/js/app.js?v={{build.version}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 44 260 184" role="img" class=" id-artwork-jantar">
+  <title>Original stylized Delhi landmark: Jantar Mantar</title>
+  <style>.id-artwork-jantar{color:var(--id-ink,#173e32)}.id-artwork-jantar .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M10 214V166Q46 170 64 214ZM250 214V166Q226 170 208 214Z" />
+      <path class="id-architecture-fill" d="M72 214L190 78V214Z" />
+      <path class="id-architecture-fill" d="M190 78H200V214H190Z" />
+      <path d="M5 220H255M10 214H250M84 214L190 92" />
+      <path d="M183 78H207M187 78V68H203V78M195 57V51" />
+      <path class="id-architecture-fill" d="M185 68Q195 54 205 68Z" />
+      <path d="M152 214V178Q152 166 161 160Q170 166 170 178V214M122 214V198Q122 190 129 186Q136 190 136 198V214" />
+      <path d="M90 193v9M100 182v9M110 170v9M120 159v9M130 147v9M140 136v9M150 124v9M160 113v9M170 101v9M180 90v9" opacity=".6" />
+      <path d="M18 214V178Q40 183 52 214M242 214V178Q228 183 218 214M190 110H200M190 150H200M190 185H200" opacity=".6" />
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="49 58 105 284" role="img" class=" id-artwork-qutb">
+  <title>Original stylized Delhi landmark: qutb</title>
+  <style>.id-artwork-qutb{color:var(--id-ink,#173e32)}.id-artwork-qutb .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-qutb .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-qutb{color:var(--id-ink,#edf2e8)}.id-artwork-qutb .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path class="id-architecture-fill" d="M67 333L80 282L84 226L88 178L91 135L95 85H106L110 135L114 178L118 226L122 282L136 333Z" />
+    <path d="M58 333V327H145V333M63 327V320H140V327M92 85V79H109V85M95 79V74H106V79M100.5 67V74M87 135H115V141H87ZM83 178H120V185H83ZM78 226H125V233H78ZM73 282H131V290H73Z" />
+    <path d="M95 89L93 131M101 89V131M106 89L108 131M92 145L89 174M100 145V174M108 145L112 174M89 189L86 222M100 189V222M112 189L116 222M86 237L82 278M100 237V278M116 237L121 278M81 294L74 317M100 294V317M122 294L129 317" opacity=".6" />
+  </g>
+</svg>

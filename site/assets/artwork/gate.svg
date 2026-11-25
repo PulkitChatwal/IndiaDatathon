@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="154 185 149 157" role="img" class=" id-artwork-gate">
+  <title>Original stylized Delhi landmark: gate</title>
+  <style>.id-artwork-gate{color:var(--id-ink,#173e32)}.id-artwork-gate .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-gate .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-gate{color:var(--id-ink,#edf2e8)}.id-artwork-gate .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path class="id-architecture-fill" d="M178 333V232H279V333H251V282A22.5 22.5 0 0 0 206 282V333Z" />
+    <path d="M163 225H294V232H163ZM174 208H283V225H174ZM184 199H273V208H184ZM192 194H265V199H192ZM170 333V327H206M251 327H287V333M185 232V326M272 232V326M198 333V282C198 241 259 241 259 282V333M178 248H203M254 248H279M182 257H196M261 257H275M186 318H197M260 318H271" />
+    <path d="M193 212H265M192 216H265M201 239H255" opacity=".5" />
+  </g>
+</svg>

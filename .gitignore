@@ -1,0 +1,9 @@
+# Internal organizer handoff and source package: never publish
+_source/
+
+# Local tooling and scratch files
+.claude/
+_shots/
+__pycache__/
+*.pyc
+.DS_Store

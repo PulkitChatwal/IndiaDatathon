@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="id-banner-desktop id-artwork-delhi-skyline-desktop" viewBox="0 0 1320 300" width="1320" height="300" preserveAspectRatio="xMidYMid meet" role="img">
+  <title>Original Delhi skyline, desktop banner</title>
+  <circle class="id-banner-sun" cx="510" cy="94" r="32" />
+  <path d="M18 260H1302" stroke="currentColor" stroke-opacity=".3" stroke-width="1.2" />
+  <g data-landmark="qutb" transform="translate(86 34) scale(.68)">
+    <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M67 333L80 282L84 226L88 178L91 135L95 85H106L110 135L114 178L118 226L122 282L136 333Z" />
+      <path d="M58 333V327H145V333M63 327V320H140V327M92 85V79H109V85M95 79V74H106V79M100.5 67V74M87 135H115V141H87ZM83 178H120V185H83ZM78 226H125V233H78ZM73 282H131V290H73Z" />
+      <path d="M95 89L93 131M101 89V131M106 89L108 131M92 145L89 174M100 145V174M108 145L112 174M89 189L86 222M100 189V222M112 189L116 222M86 237L82 278M100 237V278M116 237L121 278M81 294L74 317M100 294V317M122 294L129 317" opacity=".6" />
+    </g>
+  </g>
+  <g data-landmark="humayun" transform="translate(12 -40) scale(.9)" opacity=".75">
+    <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M325 333V325H333V281H447V325H455V333ZM333 281V275H447V281" />
+      <path class="id-architecture-fill" d="M366 257C354 244 365 228 382 219Q390 214 390 205Q391 214 399 219C416 228 427 244 415 257Z" />
+      <path d="M365 257H416V264H365ZM371 264V275M411 264V275M359 275V270H422V275M389.5 198V205M386 202H393M333 273Q345 252 357 273ZM337 273V282M353 273V282M345 258V253M424 273Q436 252 448 273ZM428 273V282M444 273V282M436 258V253M373 325V305Q390 283 407 305V325M380 325V307Q390 294 400 307V325M340 325V312Q347 301 354 312V325M426 325V312Q433 301 440 312V325M333 291H447M333 325H447M359 291V325M421 291V325M373 287H407" />
+    </g>
+  </g>
+  <g data-landmark="gate" transform="translate(420 -90) scale(1.05)">
+    <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M178 333V232H279V333H251V282A22.5 22.5 0 0 0 206 282V333Z" />
+      <path d="M163 225H294V232H163ZM174 208H283V225H174ZM184 199H273V208H184ZM192 194H265V199H192ZM170 333V327H206M251 327H287V333M185 232V326M272 232V326M198 333V282C198 241 259 241 259 282V333M178 248H203M254 248H279M182 257H196M261 257H275M186 318H197M260 318H271" />
+      <path d="M193 212H265M192 216H265M201 239H255" opacity=".5" />
+    </g>
+  </g>
+  <g data-landmark="jantar" transform="translate(811 62) scale(.9)" opacity=".85">
+    <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M10 214V166Q46 170 64 214ZM250 214V166Q226 170 208 214Z" />
+      <path class="id-architecture-fill" d="M72 214L190 78V214Z" />
+      <path class="id-architecture-fill" d="M190 78H200V214H190Z" />
+      <path d="M5 220H255M10 214H250M84 214L190 92" />
+      <path d="M183 78H207M187 78V68H203V78M195 57V51" />
+      <path class="id-architecture-fill" d="M185 68Q195 54 205 68Z" />
+      <path d="M152 214V178Q152 166 161 160Q170 166 170 178V214M122 214V198Q122 190 129 186Q136 190 136 198V214" />
+      <path d="M90 193v9M100 182v9M110 170v9M120 159v9M130 147v9M140 136v9M150 124v9M160 113v9M170 101v9M180 90v9" opacity=".6" />
+      <path d="M18 214V178Q40 183 52 214M242 214V178Q228 183 218 214M190 110H200M190 150H200M190 185H200" opacity=".6" />
+    </g>
+  </g>
+  <g data-landmark="lotus" transform="translate(1071 95) scale(.73)">
+    <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+      <path class="id-architecture-fill" d="M12 196Q33 146 74 128Q61 169 83 202Q78 124 120 78Q162 124 157 202Q179 169 166 128Q207 146 228 196L218 215H22Z" />
+      <path d="M83 202Q91 129 120 78Q149 129 157 202M22 210Q42 179 40 153Q69 175 83 210M157 210Q171 175 200 153Q198 179 218 210M12 196Q44 190 67 211M228 196Q196 190 173 211M74 128Q98 154 106 209M166 128Q142 154 134 209M120 78V209" />
+      <path d="M17 215H223V220H17ZM7 225H233M73 215V220M94 215V220M115 215V220M136 215V220M157 215V220M178 215V220" />
+    </g>
+  </g>
+  <style>.id-artwork-delhi-skyline-desktop{color:var(--id-ink,#173e32)}.id-artwork-delhi-skyline-desktop .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-delhi-skyline-desktop .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-delhi-skyline-desktop{color:var(--id-ink,#edf2e8)}.id-artwork-delhi-skyline-desktop .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+</svg>

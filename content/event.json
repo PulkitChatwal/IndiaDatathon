@@ -1,0 +1,204 @@
+{
+  "_readme": "Single source of truth for the India Datathon website. Edit this file, then run: python3 build.py",
+
+  "site": {
+    "preview": true,
+    "_preview": "true = shows the 'Design preview' bar and tells search engines not to index. Set false only when the organizer has approved the public copy.",
+    "url": "",
+    "_url": "Final public address, e.g. https://indiadatathon.org/ (used for share previews). Leave empty until the domain is confirmed.",
+    "showCountdown": true
+  },
+
+  "event": {
+    "name": "India Datathon",
+    "strapline": "Medicine × Data Science",
+    "tagline": "Clinical questions. Shared expertise. Hands-on health data science.",
+    "intro": "Two days for medical and data science/engineering participants to work together on clinical questions using a large hospital dataset and an AWS-based platform.",
+    "dates": "24–25 January 2027",
+    "datesShort": "24–25 Jan 2027",
+    "startISO": "2027-01-24",
+    "endISO": "2027-01-25",
+    "city": "New Delhi",
+    "host": "Apollo Hospitals",
+    "venueRoom": "Auditorium Hall",
+    "venueName": "Indraprastha Apollo Hospitals",
+    "addressLines": ["Sarita Vihar, Delhi–Mathura Road", "New Delhi, Delhi 110076, India"],
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Indraprastha+Apollo+Hospitals+Sarita+Vihar+New+Delhi",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Indraprastha+Apollo+Hospitals,+Sarita+Vihar,+New+Delhi&z=15&output=embed",
+    "_mapEmbedUrl": "The live Google Map shown in the Venue section. Leave empty to show the India Gate drawing instead.",
+    "endTime": "6:00 PM IST"
+  },
+
+  "registration": {
+    "_state": "upcoming | open | waitlist | closed.  An FAQ item may carry q_open / a_open / a_closed etc. to change its wording with the state.",
+    "state": "upcoming",
+    "opensText": "Registration opens in the second half of December 2026.",
+    "formUrl": "",
+    "formEmbed": true,
+    "_formEmbed": "true = when registration is open, the Google Form is shown inside the page (with a button to open it in its own tab). false = button only. Needs the long docs.google.com/forms/d/e/…/viewform link, not a forms.gle short link.",
+    "_formUrl": "The Google Form link printed by google-form/create-form.gs ('Share this link'). Paste it here, then set state to open on opening day. Until state is open the page keeps showing the locked preview.",
+    "formEndpoint": "",
+    "_formEndpoint": "Or: an address that accepts the built-in form as a POST (Formspree, Google Apps Script, your own API). With state open and this set, the built-in form becomes live."
+  },
+
+  "signup": {
+    "_mode": "off | demo | live.  off = no email form at all (the safe fallback).  demo = form is shown for design review and saves NOTHING.  live = posts the email to 'endpoint'.",
+    "mode": "demo",
+    "endpoint": "",
+    "_successState": "pending = service uses double opt-in ('check your email').  confirmed = address is subscribed immediately.",
+    "successState": "pending",
+    "privacyUrl": ""
+  },
+
+  "contacts": {
+    "_note": "Leave empty until approved. Empty contacts are never shown as broken buttons.",
+    "generalEmail": "",
+    "sponsorshipEmail": "",
+    "sponsorshipName": ""
+  },
+
+  "stats": [
+    { "value": "~80", "label": "participants", "detail": "Students and professionals" },
+    { "value": "40 + 40", "label": "balanced backgrounds", "detail": "Target: medical and data science/engineering" },
+    { "value": "2 days", "label": "one continuous buildathon", "detail": "Both days finish at 6:00 PM IST" },
+    { "value": "5 min", "label": "team presentations", "detail": "The reasoning matters more than polish" },
+    { "value": "Top 3", "label": "teams awarded", "detail": "Certificates for every participant" }
+  ],
+
+  "sponsors": {
+    "_items": "Add confirmed sponsors here once logos and permission are approved, e.g. { \"name\": \"Example Org\", \"logo\": \"assets/sponsors/example.svg\", \"url\": \"https://example.org\", \"group\": \"Sponsors\" }. While this list is empty the section shows 'Coming soon'.",
+    "items": [],
+    "placeholderSlots": 6
+  },
+
+  "schedule": [
+    {
+      "id": 1,
+      "label": "Day 1",
+      "weekday": "Sunday",
+      "date": "24 January",
+      "theme": "Connect, explore & build",
+      "summary": "Meet your team, examine the data, define a question and begin the work.",
+      "slots": [
+        { "time": "8:30–9:00 AM", "type": "arrive", "title": "Check-in and participant introductions" },
+        { "time": "9:00–9:20 AM", "type": "arrive", "title": "Welcome, objectives and expected outputs" },
+        { "time": "9:20–10:30 AM", "type": "llm", "tag": "LLMathon", "title": "Questioning AI, comparing answers and framing the team’s problem" },
+        { "time": "10:30–10:45 AM", "type": "break", "title": "Break" },
+        { "time": "10:45–11:30 AM", "type": "build", "tag": "Buildathon", "title": "Dataset, AWS environment and tools introduced" },
+        { "time": "11:30 AM–12:30 PM", "type": "build", "tag": "Buildathon", "title": "Clinical question framing and hypothesis generation" },
+        { "time": "12:30–1:15 PM", "type": "break", "title": "Lunch break" },
+        { "time": "1:15–3:00 PM", "type": "build", "tag": "Buildathon", "title": "Exploratory analysis, data quality and a baseline approach" },
+        { "time": "3:00–3:15 PM", "type": "break", "title": "Break" },
+        { "time": "3:15–4:15 PM", "type": "checkin", "tag": "Check-in", "title": "Interim check-in: the question, findings and help needed" },
+        { "time": "4:15–5:45 PM", "type": "build", "tag": "Buildathon", "title": "Analysis or prototype development" },
+        { "time": "5:45–6:00 PM", "type": "arrive", "title": "Team next steps and unresolved blockers" }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Day 2",
+      "weekday": "Monday",
+      "date": "25 January",
+      "theme": "Refine, present & reflect",
+      "summary": "Refine the analysis, review it with mentors, and present the findings and reasoning.",
+      "slots": [
+        { "time": "8:30–9:00 AM", "type": "arrive", "title": "Arrival and technical support" },
+        { "time": "9:00–9:20 AM", "type": "arrive", "title": "Restart briefing and priorities" },
+        { "time": "9:20–11:00 AM", "type": "build", "tag": "Buildathon", "title": "Analysis, internal checks and prototype refinement" },
+        { "time": "11:00–11:15 AM", "type": "break", "title": "Break" },
+        { "time": "11:15 AM–12:00 PM", "type": "checkin", "tag": "Check-in", "title": "Interim check-in: parallel team reviews" },
+        { "time": "12:00–12:30 PM", "type": "concept", "tag": "Concept", "title": "Health AI Systems Thinking & Governance: From Clinical Question to Responsible Use" },
+        { "time": "12:30–1:15 PM", "type": "break", "title": "Lunch break" },
+        { "time": "1:15–3:00 PM", "type": "build", "tag": "Buildathon", "title": "Apply systems thinking and governance; prepare the team presentation" },
+        { "time": "3:00–3:15 PM", "type": "break", "title": "Final presentation preparation and break" },
+        { "time": "3:15–5:15 PM", "type": "present", "tag": "Presentations", "title": "Five-minute team presentations and discussion" },
+        { "time": "5:15–5:40 PM", "type": "arrive", "title": "Judges’ deliberation, faculty reflections and participant feedback" },
+        { "time": "5:40–6:00 PM", "type": "present", "tag": "Awards", "title": "Awards for the top three teams, acknowledgements and closing" }
+      ]
+    }
+  ],
+
+  "faculty": [
+    {"name": "Leo Anthony Celi", "affiliation": "MIT", "portrait": "assets/faculty/leo-anthony-celi.webp", "linkedin": "https://www.linkedin.com/in/leo-anthony-celi-b25131/", "bio": "Leo Anthony Celi directs MIT Critical Data. His work brings clinicians and data scientists together to study routinely collected health data and improve the way clinical evidence is developed."},
+    {"name": "Anirban Bhattacharyya", "affiliation": "Mayo Clinic", "portrait": "assets/faculty/anirban-bhattacharyya.webp", "linkedin": "https://www.linkedin.com/in/anirbanbhattacharyya-md/", "bio": "Anirban Bhattacharyya is a critical care specialist at Mayo Clinic in Florida. His interests include the development and application of artificial intelligence in intensive care and mentoring trainees in clinical research."},
+    {"name": "Sujoy Kar", "affiliation": "Apollo Hospitals", "portrait": "assets/faculty/sujoy-kar.webp", "linkedin": "https://www.linkedin.com/in/drsujoykar/", "bio": "Sujoy Kar is Chief Medical Information Officer at Apollo Hospitals. His work includes clinical artificial intelligence, digital health and the adoption of data-informed approaches in health care."},
+    {"name": "Piyush Mathur", "affiliation": "Cleveland Clinic / BrainX", "portrait": "assets/faculty/piyush-mathur.webp", "linkedin": "https://www.linkedin.com/in/piyush-mathur-md-fccm-fasa-famia-b40218156/", "bio": "Piyush Mathur is an anesthesiologist and intensivist at Cleveland Clinic and a founder of BrainX. His work spans clinical care, quality improvement and applications of artificial intelligence in health care."},
+    {"name": "Sulagna Bhattacharjee", "affiliation": "AIIMS, New Delhi", "portrait": "assets/faculty/sulagna-bhattacharjee.webp", "linkedin": "", "bio": "Sulagna Bhattacharjee is a faculty member in anaesthesiology, pain medicine and critical care at AIIMS, New Delhi."},
+    {"name": "Anirban Hom Choudhuri", "affiliation": "VMMC & Safdarjung Hospital", "portrait": "assets/faculty/anirban-hom-choudhuri.webp", "linkedin": "https://www.linkedin.com/in/anirban-hom-choudhuri-2859858b/", "bio": "Anirban Hom Choudhuri is Director Professor and Head of Critical Care Medicine at Vardhman Mahavir Medical College & Safdarjung Hospital, New Delhi. His research examines septic shock, ICU-acquired infections and outcomes in critically ill patients, including studies using routinely collected clinical data. His published work also addresses antimicrobial resistance and end-of-life care in the ICU."},
+    {"name": "Terri L. Menser", "affiliation": "Mayo Clinic", "portrait": "assets/faculty/terri-l-menser.webp", "linkedin": "https://www.linkedin.com/in/terri-menser-099b5a9/", "bio": "Terri L. Menser is a health services researcher at Mayo Clinic. She studies practice improvement, patient outcomes, health disparities and the implementation of interventions and health information technology."},
+    {"name": "Tavpritesh Sethi", "affiliation": "IIIT-Delhi", "portrait": "assets/faculty/tavpritesh-sethi.webp", "linkedin": "https://www.linkedin.com/in/tavpritesh/", "bio": "Tavpritesh Sethi is Professor of Computational Biology and founding head of the Center of Excellence in Healthcare at IIIT-Delhi. His work connects medicine and computation, including clinical decision support and machine learning for critical care and community health."},
+    {"name": "Mayank Garg", "affiliation": "Ashoka University", "portrait": "assets/faculty/mayank-garg.webp", "linkedin": "https://www.linkedin.com/in/mayank-garg-bb5885281/", "bio": "Mayank Garg is a physician-scientist and Simons-Ashoka Early Career Fellow at Ashoka University. His work connects clinical questions, experimental research and health data science."},
+    {"name": "Swapnil Mishra", "affiliation": "National University of Singapore", "portrait": "assets/faculty/swapnil-mishra.webp", "linkedin": "https://www.linkedin.com/in/swmishra/", "bio": "Swapnil Mishra is an Assistant Professor at the NUS Saw Swee Hock School of Public Health, with a joint appointment at the NUS Institute of Data Science. His research combines global health, machine learning and Bayesian modelling."},
+    {"name": "Vinayak Mathur", "affiliation": "Dure Technologies / Terablu Climate Technologies / Eldric Group", "portrait": "assets/faculty/vinayak-mathur.webp", "linkedin": "https://www.linkedin.com/in/vinayak-mathur-aa7a29225/", "bio": "Vinayak Mathur is Envoy, Special Projects at Dure Technologies and a board member of Terablu Climate Technologies and Eldric Group."},
+    {"name": "Amit Agarwal", "affiliation": "Capital One", "portrait": "assets/faculty/amit-agarwal.webp", "linkedin": "https://www.linkedin.com/in/amit-agarwal-ph-d-96b5b856/", "bio": "Amit Agarwal is a Research Manager at Capital One, where he works on AI safety."},
+    {"name": "Pushkar Shukla", "affiliation": "Cloudphysician.AI", "portrait": "assets/faculty/pushkar-shukla.webp", "linkedin": "https://www.linkedin.com/in/pushkar-shukla-572ab551/", "bio": "Pushkar Shukla works on AI safety at Cloudphysician.AI. His research interests include fairness, computer vision and interpretability, with work on bias detection and mitigation, counterfactual causal analysis and safety evaluations."},
+    {"name": "Feng Mengling", "affiliation": "National University of Singapore", "portrait": "", "linkedin": "https://www.linkedin.com/in/mengling-mornin-feng-9400811a/", "profile": "https://sph.nus.edu.sg/faculty-directory/feng-mengling/", "bio": "Feng Mengling is an Associate Professor at the NUS Saw Swee Hock School of Public Health. Research interests include machine learning and artificial intelligence for health care and health data analytics."}
+  ],
+
+  "faqs": [
+    {
+      "group": "The event",
+      "items": [
+        { "q": "When and where is India Datathon?", "a": "24–25 January 2027, at Indraprastha Apollo Hospitals in New Delhi. The event is in person only. Both days finish at 6:00 PM IST." },
+        { "q": "What is a datathon?", "a": "A short, collaborative event where people with different expertise investigate questions using a shared dataset. At India Datathon, clinical and technical participants work together to frame a useful clinical question, examine the data and explain what their findings can support." },
+        { "q": "How many participants are expected?", "a": "Approximately 80, with an even split between medical and data science/engineering backgrounds." },
+        { "q": "What dataset and platform will we use?", "a": "A large hospital dataset and an AWS-based platform. The specific dataset is to be announced. Access requirements and preparation instructions will follow." },
+        { "q": "Which clinical tracks can I work on?", "a": "Specific clinical tracks are to be announced. Questions will follow the five guardrails in About." }
+      ]
+    },
+    {
+      "group": "Applying",
+      "items": [
+        { "q": "When does registration open?", "a": "Registration opens in the second half of December 2026. Join the email notification list to hear when it opens. Joining the list does not reserve a place.", "q_open": "How do I register?", "a_open": "Registration is open. Fill in the participation form on this site. Apply individually; submitting the form does not by itself confirm a place.", "a_closed": "Registration is closed." },
+        { "q": "Who can apply? Do I need to code?", "a": "Students and professionals from medical and data science/engineering backgrounds can apply. Medical participants do not need to code. Technical participants should know Python (preferred), R or SQL. Bring curiosity and a willingness to work with and learn from teammates with different expertise." },
+        { "q": "Can I apply individually? How are teams formed?", "a": "Yes, apply as an individual. Organizers will form teams with a balanced mix of clinical knowledge and technical skills." },
+        { "q": "What is the fee?", "a": "The fee amount is to be announced." }
+      ]
+    },
+    {
+      "group": "At the datathon",
+      "items": [
+        { "q": "What should I bring?", "a": "Please bring a laptop." },
+        { "q": "Are meals, travel and accommodation provided?", "a": "Meals will be provided. Participants are responsible for their own travel and accommodation." },
+        { "q": "What is the final presentation?", "a": "Each team will give a five-minute presentation about what it built. Tell the story behind the work: the clinical question, what the data could support, the decisions, disagreements and changes along the way, and how clinical and technical perspectives shaped your approach. The journey and reasoning matter more than a polished end product." },
+        { "q": "Will there be certificates and prizes?", "a": "Participants will receive certificates. Prizes will be awarded to the top three teams; prize details will be announced." },
+        { "q": "Can we use generative AI?", "a": "Yes. Generative AI use is encouraged. The LLMathon will help teams compare AI responses, question their reliability and decide what counts as evidence. Teams remain responsible for the reasoning behind their work." },
+        { "q": "Who owns the code? What happens after the event?", "a": "Teams own the code they create. Any publication or continued data access after the event must be arranged separately by the participants involved." }
+      ]
+    }
+  ],
+
+  "form": {
+    "_note": "The participation form. Questions follow the ESICM Datathon 2027 registration form, adapted for India Datathon (no language question, 'Medical care experience' instead of intensive care, no Milan presentation question). Shown locked ('Coming soon') while registration.state is 'upcoming'. Every build also writes google-form/create-form.gs, which creates the same questions as a Google Form. Field types: text, email, tel, textarea, select, radio, checks, confirm.",
+    "sections": [
+      {
+        "title": "About you",
+        "fields": [
+          { "name": "full_name", "label": "Full name", "type": "text", "required": true, "autocomplete": "name" },
+          { "name": "email", "label": "Email address", "type": "email", "required": true, "autocomplete": "email" },
+          { "name": "affiliation", "label": "Affiliation", "type": "text", "required": true, "autocomplete": "organization" },
+          { "name": "medical_care_experience", "label": "Medical care experience", "type": "select", "required": true, "options": ["None", "Less than 10 years", "More than 10 years"] }
+        ]
+      },
+      {
+        "title": "Your skills",
+        "fields": [
+          { "name": "sql_skills", "label": "SQL skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] },
+          { "name": "python_skills", "label": "Python skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] },
+          { "name": "r_skills", "label": "R skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] },
+          { "name": "machine_learning_skills", "label": "Machine learning skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] },
+          { "name": "general_analytical_skills", "label": "General analytical skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] },
+          { "name": "statistical_modelling_skills", "label": "Statistical modelling skills", "type": "select", "required": true, "options": ["None", "Reasonable", "Pro"] }
+        ]
+      },
+      {
+        "title": "Team and experience",
+        "fields": [
+          { "name": "previous_datathon", "label": "Previous participation in a datathon", "type": "radio", "required": true, "options": ["Yes", "No"], "wide": true },
+          { "name": "preferred_teammates", "label": "I prefer to be in a team with these other people", "type": "textarea", "required": false, "wide": true }
+        ]
+      }
+    ],
+    "consent": "I agree to the use of these details to process my participation in India Datathon."
+  }
+}

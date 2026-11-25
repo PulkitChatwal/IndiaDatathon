@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 69 240 165" role="img" class=" id-artwork-lotus">
+  <title>Original stylized Delhi landmark: lotus</title>
+  <style>.id-artwork-lotus{color:var(--id-ink,#173e32)}.id-artwork-lotus .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-lotus .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-lotus{color:var(--id-ink,#edf2e8)}.id-artwork-lotus .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path class="id-architecture-fill" d="M12 196Q33 146 74 128Q61 169 83 202Q78 124 120 78Q162 124 157 202Q179 169 166 128Q207 146 228 196L218 215H22Z" />
+    <path d="M83 202Q91 129 120 78Q149 129 157 202M22 210Q42 179 40 153Q69 175 83 210M157 210Q171 175 200 153Q198 179 218 210M12 196Q44 190 67 211M228 196Q196 190 173 211M74 128Q98 154 106 209M166 128Q142 154 134 209M120 78V209" />
+    <path d="M17 215H223V220H17ZM7 225H233M73 215V220M94 215V220M115 215V220M136 215V220M157 215V220M178 215V220" />
+  </g>
+</svg>

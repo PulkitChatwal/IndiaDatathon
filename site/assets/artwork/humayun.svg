@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="316 189 148 153" role="img" class=" id-artwork-humayun">
+  <title>Original stylized Delhi landmark: humayun</title>
+  <style>.id-artwork-humayun{color:var(--id-ink,#173e32)}.id-artwork-humayun .id-architecture-fill{fill:var(--id-paper,#f8f6ef)}.id-artwork-humayun .id-banner-sun{fill:var(--id-orange,#f4a45f);opacity:.8}@media(prefers-color-scheme:dark){.id-artwork-humayun{color:var(--id-ink,#edf2e8)}.id-artwork-humayun .id-architecture-fill{fill:var(--id-paper,#13231e)}}</style>
+  <g stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path class="id-architecture-fill" d="M325 333V325H333V281H447V325H455V333ZM333 281V275H447V281" />
+    <path class="id-architecture-fill" d="M366 257C354 244 365 228 382 219Q390 214 390 205Q391 214 399 219C416 228 427 244 415 257Z" />
+    <path d="M365 257H416V264H365ZM371 264V275M411 264V275M359 275V270H422V275M389.5 198V205M386 202H393M333 273Q345 252 357 273ZM337 273V282M353 273V282M345 258V253M424 273Q436 252 448 273ZM428 273V282M444 273V282M436 258V253M373 325V305Q390 283 407 305V325M380 325V307Q390 294 400 307V325M340 325V312Q347 301 354 312V325M426 325V312Q433 301 440 312V325M333 291H447M333 325H447M359 291V325M421 291V325M373 287H407" />
+  </g>
+</svg>
