@@ -17,6 +17,12 @@ Publish the `site/` folder only.
 | `site/assets/js/app.js` | Menu, day tabs, show-all buttons, countdown, form behaviour. |
 | `_source/` | The original developer package and handoff text, kept for reference. Internal; never publish. Excluded from git by `.gitignore`. |
 
+## Live site
+
+https://pulkitchatwal.github.io/IndiaDatathon/ is served by GitHub Pages from the `gh-pages`
+branch, which holds a copy of the `site/` folder. To publish changes: commit on `main`, then run
+`./deploy.sh`.
+
 ## Make a change
 
 1. Edit `content/event.json` (or the template for prose).
