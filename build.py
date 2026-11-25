@@ -405,8 +405,8 @@ def build_blocks(c: dict) -> dict:
             f'<p class="soft-note">{icon("mail")}<span>Sponsorship contact details will be added once confirmed.</span></p>'
         )
     host_tile = (
-        '<li class="logo-tile logo-tile-host"><span class="tile-label">Host</span>'
-        + (host_logo("hostLogoOnDark", "host-logo tile-logo") or f'<span class="tile-name">{e(ev["host"])}</span>')
+        f'<li class="logo-tile logo-tile-host{" logo-tile-host-light" if logo else ""}"><span class="tile-label">Host</span>'
+        + (host_logo("hostLogo", "host-logo tile-logo") or f'<span class="tile-name">{e(ev["host"])}</span>')
         + "</li>"
     )
     if has_sponsors:

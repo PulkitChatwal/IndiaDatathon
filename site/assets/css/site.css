@@ -528,6 +528,8 @@ summary:hover .toggle { border-color: var(--green-800); }
 .logo-tile-host { background: var(--green-800); border-color: var(--green-800); }
 .logo-tile-host .tile-label { color: var(--saffron-400); }
 .logo-tile-host .tile-name { color: var(--on-dark); }
+.logo-tile-host.logo-tile-host-light { background: var(--paper); border-color: var(--line-strong); }
+.logo-tile-host.logo-tile-host-light .tile-label { color: var(--saffron-700); }
 .logo-tile-empty { border: 1px dashed var(--line-strong); background: repeating-linear-gradient(-45deg, var(--ivory) 0 9px, var(--sand) 9px 10px); }
 .tile-soon { font-size: 14px; color: var(--muted); }
 
