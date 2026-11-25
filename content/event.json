@@ -4,7 +4,7 @@
   "site": {
     "preview": true,
     "_preview": "true = shows the 'Design preview' bar and tells search engines not to index. Set false only when the organizer has approved the public copy.",
-    "url": "https://pulkitchatwal.github.io/IndiaDatathon/",
+    "url": "https://pulkitchatwal.github.io/IndiaDatathon/site/",
     "_url": "Final public address, e.g. https://indiadatathon.org/ (used for share previews). Leave empty until the domain is confirmed.",
     "showCountdown": true
   },

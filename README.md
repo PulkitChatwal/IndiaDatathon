@@ -19,9 +19,11 @@ Publish the `site/` folder only.
 
 ## Live site
 
-https://pulkitchatwal.github.io/IndiaDatathon/ is served by GitHub Pages from the `gh-pages`
-branch, which holds a copy of the `site/` folder. To publish changes: commit on `main`, then run
-`./deploy.sh`.
+https://pulkitchatwal.github.io/IndiaDatathon/ (it forwards to `/site/`).
+
+GitHub Pages serves the `main` branch of this repository. The page at the repository root only
+forwards visitors to the `site/` folder, which is the website. To publish changes: rebuild,
+commit, and push `main` (or run `./deploy.sh`).
 
 ## Make a change
 
