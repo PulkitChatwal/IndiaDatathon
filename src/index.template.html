@@ -50,7 +50,7 @@
         <p class="hero-tagline"><span>Clinical questions.</span> <span>Shared expertise.</span> <em>Hands-on health data science.</em></p>
         <p class="hero-intro">{{event.intro}}</p>
         {{>hero_actions}}
-        <p class="hero-host">Hosted by <strong>{{event.host}}</strong></p>
+        {{>hero_host}}
       </div>
 
       <aside class="event-card" aria-label="Event details">
@@ -313,7 +313,7 @@
       </header>
       <div class="visit-grid">
         <article class="venue-card reveal">
-          <p class="venue-host">Hosted by {{event.host}}</p>
+          {{>venue_logo}}<p class="venue-host">Hosted by {{event.host}}</p>
           <h3>{{event.venueRoom}}</h3>
           <p class="venue-name">{{event.venueName}}</p>
           <address>{{>address}}</address>
@@ -362,6 +362,7 @@
         <span class="brand-text">{{event.name}}<small>{{event.strapline}}</small></span>
       </a>
       <p>{{event.dates}} · {{event.city}}, India<br>Hosted by {{event.host}}</p>
+      {{>footer_logo}}
     </div>
     <nav class="footer-nav" aria-label="Footer">
       <div>

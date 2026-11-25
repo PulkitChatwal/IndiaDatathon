@@ -237,6 +237,14 @@ h4 { font-size: 17px; line-height: 1.3; font-weight: 600; }
 .hero-more { margin-top: 12px; }
 .hero-opening { margin-top: 14px; font-size: 14.5px; color: var(--muted); }
 .hero-host { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); max-width: 54ch; }
+.host-logo { display: block; width: auto; flex: none; }
+.hero-host-logo { display: flex; align-items: center; gap: 16px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.hero-host-logo .host-logo { height: 56px; }
+.venue-card { position: relative; }
+.venue-logo { position: absolute; top: clamp(22px, 3vw, 32px); right: clamp(22px, 3vw, 32px); height: 62px; }
+.venue-card:has(.venue-logo) h3, .venue-card:has(.venue-logo) .venue-host { padding-right: 96px; }
+.tile-logo { height: 70px; max-height: none; }
+.footer-logo { height: 54px; margin-top: 18px; }
 .hero-host strong { color: var(--green-800); font-weight: 600; }
 
 .event-card { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: clamp(22px, 2.5vw, 28px); }

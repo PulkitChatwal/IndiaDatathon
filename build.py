@@ -254,6 +254,24 @@ def build_blocks(c: dict) -> dict:
         "closed": "<strong>Closed</strong><span>Thank you for your interest</span>",
     }[state]
 
+    # ---- host logo -------------------------------------------------------
+    def host_logo(key: str, css: str) -> str:
+        path = ev.get(key) or ""
+        if not path:
+            return ""
+        if not (SITE / path).exists():
+            sys.exit(f"Host logo file missing: site/{path}")
+        return f'<img class="{css}" src="{e(path)}" alt="{e(ev["host"])}" width="72" height="53" decoding="async">'
+
+    logo = host_logo("hostLogo", "host-logo")
+    b["hero_host"] = (
+        f'<p class="hero-host hero-host-logo"><span>Hosted by</span>{logo}</p>'
+        if logo
+        else f'<p class="hero-host">Hosted by <strong>{e(ev["host"])}</strong></p>'
+    )
+    b["venue_logo"] = host_logo("hostLogo", "host-logo venue-logo")
+    b["footer_logo"] = host_logo("hostLogoOnDark", "host-logo footer-logo")
+
     b["skyline_desktop"] = inline_svg("delhi-skyline-desktop.svg", "skyline-art skyline-desktop")
     b["skyline_mobile"] = inline_svg("delhi-skyline-mobile.svg", "skyline-art skyline-mobile")
     if ev.get("mapEmbedUrl"):
@@ -388,7 +406,8 @@ def build_blocks(c: dict) -> dict:
         )
     host_tile = (
         '<li class="logo-tile logo-tile-host"><span class="tile-label">Host</span>'
-        f'<span class="tile-name">{e(ev["host"])}</span></li>'
+        + (host_logo("hostLogoOnDark", "host-logo tile-logo") or f'<span class="tile-name">{e(ev["host"])}</span>')
+        + "</li>"
     )
     if has_sponsors:
         groups: dict[str, list] = {}

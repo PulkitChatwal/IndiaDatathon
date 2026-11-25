@@ -99,7 +99,7 @@ The "Coming soon" badge and the "Soon" tag in the menu disappear automatically.
 - [ ] Map pin checked against the real entrance; gate, floor and accessibility details added.
       Google lists the hospital as Jasola Vihar, 110020; the site uses Apollo's official Sarita Vihar, 110076.
 - [ ] Privacy notice mentions the embedded Google Map (it loads from Google when the Venue section is reached).
-- [ ] Approved Apollo Hospitals logo, if one is to be shown (the site uses text only today).
+- [ ] Apollo Hospitals' approval to show their logo. The files in `site/assets/logos/` are the official logo, unmodified, from apollohospitals.com.
 - [ ] Fee, deadline, admission process, dataset and clinical tracks added when confirmed.
 - [ ] Privacy notice names where form answers are stored (Google Forms, in the organizer's account).
 - [ ] Checked on a real iPhone (Safari) and Android phone (Chrome), portrait and landscape.
