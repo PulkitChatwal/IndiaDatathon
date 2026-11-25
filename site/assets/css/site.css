@@ -243,7 +243,6 @@ h4 { font-size: 17px; line-height: 1.3; font-weight: 600; }
 .venue-card { position: relative; }
 .venue-logo { position: absolute; top: clamp(22px, 3vw, 32px); right: clamp(22px, 3vw, 32px); height: 62px; }
 .venue-card:has(.venue-logo) h3, .venue-card:has(.venue-logo) .venue-host { padding-right: 96px; }
-.tile-logo { height: 70px; max-height: none; }
 .footer-logo { height: 54px; margin-top: 18px; }
 .hero-host strong { color: var(--green-800); font-weight: 600; }
 
@@ -514,24 +513,19 @@ summary:hover .toggle { border-color: var(--green-800); }
 .is-locked .choice-confirm { background: transparent; }
 
 /* ---------- sponsors ---------- */
-.sponsor-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
-.sponsor-cta { display: grid; gap: 16px; justify-items: start; }
+.sponsor-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.sponsor-cta { display: grid; gap: 14px; justify-items: start; }
 .sponsor-cta h3 { font-size: clamp(20px, 2.1vw, 24px); }
 .sponsor-cta p { color: var(--muted); max-width: 52ch; }
-.soft-note { display: flex; align-items: flex-start; gap: 10px; width: 100%; padding: 14px 16px; background: var(--sand); border: 1px dashed var(--line-strong); border-radius: var(--radius); font-size: 15px; line-height: 1.5; }
-.soft-note .icon { width: 18px; height: 18px; color: var(--muted); margin-top: 2px; }
-.logo-wall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.logo-tile { position: relative; min-height: 124px; padding: 36px 16px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); display: grid; place-items: center; text-align: center; }
-.logo-tile img { max-height: 64px; width: auto; }
-.tile-label { position: absolute; left: 14px; top: 12px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.tile-name { font-family: var(--font-display); font-size: clamp(18px, 1.8vw, 21px); font-weight: 400; line-height: 1.2; color: var(--green-800); }
-.logo-tile-host { background: var(--green-800); border-color: var(--green-800); }
-.logo-tile-host .tile-label { color: var(--saffron-400); }
-.logo-tile-host .tile-name { color: var(--on-dark); }
-.logo-tile-host.logo-tile-host-light { background: var(--paper); border-color: var(--line-strong); }
-.logo-tile-host.logo-tile-host-light .tile-label { color: var(--saffron-700); }
-.logo-tile-empty { border: 1px dashed var(--line-strong); background: repeating-linear-gradient(-45deg, var(--ivory) 0 9px, var(--sand) 9px 10px); }
-.tile-soon { font-size: 14px; color: var(--muted); }
+.soft-note { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.soft-note .icon { width: 18px; height: 18px; color: var(--saffron-700); margin-top: 2px; }
+.sponsor-roll { display: grid; gap: clamp(28px, 4vw, 44px); }
+.sponsor-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--saffron-700); margin-bottom: 14px; }
+.sponsor-host-logo { height: clamp(78px, 8vw, 104px); }
+.sponsor-marks { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 44px; }
+.sponsor-logo { display: block; height: 56px; width: auto; }
+.sponsor-name { font-family: var(--font-display); font-size: clamp(20px, 2vw, 24px); color: var(--green-800); }
+.sponsor-soon { font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 25px); color: var(--muted); }
 
 /* ---------- venue ---------- */
 .visit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
@@ -670,8 +664,6 @@ summary:hover .toggle { border-color: var(--green-800); }
   .slot { grid-template-columns: 122px minmax(0, 1fr); gap: 12px; }
   .slot time { font-size: 13.5px; white-space: normal; }
   .person-name a { display: inline-block; padding-block: 11px; }
-  .logo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .logo-tile { min-height: 118px; }
   .input-row { flex-direction: column; }
   .input-row .btn { width: 100%; }
   .form-actions .btn { width: 100%; }

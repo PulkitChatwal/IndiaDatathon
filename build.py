@@ -404,40 +404,41 @@ def build_blocks(c: dict) -> dict:
             'backgrounds for two days of hands-on work on clinical questions.</p>'
             f'<p class="soft-note">{icon("mail")}<span>Sponsorship contact details will be added once confirmed.</span></p>'
         )
-    host_tile = (
-        f'<li class="logo-tile logo-tile-host{" logo-tile-host-light" if logo else ""}"><span class="tile-label">Host</span>'
-        + (host_logo("hostLogo", "host-logo tile-logo") or f'<span class="tile-name">{e(ev["host"])}</span>')
-        + "</li>"
-    )
+    host_mark = host_logo("hostLogo", "host-logo sponsor-host-logo") or f'<span class="sponsor-name">{e(ev["host"])}</span>'
     if has_sponsors:
         groups: dict[str, list] = {}
         for item in sp["items"]:
             groups.setdefault(item.get("group", "Sponsors"), []).append(item)
-        tiles = []
+        rows = []
         for group, members in groups.items():
+            marks = []
             for m in members:
                 inner = (
-                    f'<img src="{e(m["logo"])}" alt="{e(m["name"])}" loading="lazy">' if m.get("logo") else f'<span class="tile-name">{e(m["name"])}</span>'
+                    f'<img class="sponsor-logo" src="{e(m["logo"])}" alt="{e(m["name"])}" loading="lazy">'
+                    if m.get("logo")
+                    else f'<span class="sponsor-name">{e(m["name"])}</span>'
                 )
                 if m.get("url"):
                     inner = f'<a href="{e(m["url"])}" target="_blank" rel="noopener">{inner}</a>'
-                tiles.append(f'<li class="logo-tile"><span class="tile-label">{e(group)}</span>{inner}</li>')
+                marks.append(f"<li>{inner}</li>")
+            rows.append(f'<div class="sponsor-row"><p class="sponsor-label">{e(group)}</p><ul class="sponsor-marks">{"".join(marks)}</ul></div>')
         b["sponsors_lede"] = f"With thanks to the organizations supporting {e(ev['name'])}."
         b["sponsors_badge"] = ""
-        grid = host_tile + "".join(tiles)
+        sponsor_rows = "".join(rows)
     else:
         b["sponsors_lede"] = "Sponsor and partner announcements are on the way."
         b["sponsors_badge"] = '<span class="badge-soon">Coming soon</span>'
-        grid = host_tile + "".join(
-            '<li class="logo-tile logo-tile-empty" aria-hidden="true"><span class="tile-label">Sponsor</span>'
-            '<span class="tile-soon">Announcing soon</span></li>'
-            for _ in range(sp.get("placeholderSlots", 6) - 1)
+        sponsor_rows = (
+            '<div class="sponsor-row"><p class="sponsor-label">Sponsors &amp; partners</p>'
+            '<p class="sponsor-soon">To be announced</p></div>'
         )
     b["sponsors_body"] = (
         '<div class="sponsor-grid reveal">'
         f'<div class="sponsor-cta">{contact_html}</div>'
-        f'<ul class="logo-wall">{grid}</ul>'
-        "</div>"
+        '<div class="sponsor-roll">'
+        f'<div class="sponsor-row"><p class="sponsor-label">Hosted by</p>{host_mark}</div>'
+        f"{sponsor_rows}"
+        "</div></div>"
     )
 
     # ---- venue -----------------------------------------------------------
