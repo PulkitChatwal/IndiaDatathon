@@ -4,7 +4,8 @@
   "site": {
     "preview": false,
     "_preview": "true = shows the 'Design preview' bar and tells search engines not to index. Set false only when the organizer has approved the public copy.",
-    "url": "https://indiadatathon.org/",
+    "url": "https://pulkitchatwal.github.io/IndiaDatathon/",
+    "_urlPending": "When the domain owner has pointed indiadatathon.org at GitHub Pages: set url back to https://indiadatathon.org/, restore the CNAME file (one line: indiadatathon.org), rebuild and push.",
     "credit": "Website designed and managed by Pulkit Chatwal",
     "creditLinks": [
       { "label": "Email", "url": "mailto:pulkitchatwal@gmail.com" },
