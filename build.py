@@ -485,7 +485,21 @@ def build_blocks(c: dict) -> dict:
     b["footer_contact"] = f'<div><h2>Contact</h2><ul>{"".join(rows)}</ul></div>'
     note = "Event details subject to final confirmation."
     b["footer_note"] = ("Design preview · " + note) if site["preview"] else note
-    b["credit"] = f'<span class="footer-credit">{e(site["credit"])}</span>' if site.get("credit") else ""
+    credit_links = []
+    for link in site.get("creditLinks", []):
+        url = link["url"]
+        if not (url.startswith("https://") or url.startswith("mailto:")):
+            sys.exit(f"site.creditLinks: {link['label']} must be an https:// or mailto: link")
+        extra = "" if url.startswith("mailto:") else ' target="_blank" rel="noopener"'
+        new_tab = "" if url.startswith("mailto:") else '<span class="sr-only"> (opens in a new tab)</span>'
+        credit_links.append(f'<a href="{e(url)}"{extra}>{e(link["label"])}{new_tab}</a>')
+    b["credit"] = (
+        f'<span class="footer-credit">{e(site["credit"])}'
+        + (f'<span class="credit-links">{"".join(credit_links)}</span>' if credit_links else "")
+        + "</span>"
+        if site.get("credit")
+        else ""
+    )
 
     # ---- dedicated form page (site/form.html) ---------------------------------
     google = re.fullmatch(r"(https://docs\.google\.com/forms/d/e/[A-Za-z0-9_-]+/viewform)(?:\?.*)?", reg["formUrl"] or "")

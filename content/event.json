@@ -6,6 +6,11 @@
     "_preview": "true = shows the 'Design preview' bar and tells search engines not to index. Set false only when the organizer has approved the public copy.",
     "url": "https://indiadatathon.org/",
     "credit": "Website designed and managed by Pulkit Chatwal",
+    "creditLinks": [
+      { "label": "Email", "url": "mailto:pulkitchatwal@gmail.com" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/pulkit-chatwal-1a6a2222b/" },
+      { "label": "Website", "url": "https://pulkitchatwal.github.io/" }
+    ],
     "_url": "Final public address, e.g. https://indiadatathon.org/ (used for share previews). Leave empty until the domain is confirmed.",
     "showCountdown": true
   },
