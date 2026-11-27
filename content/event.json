@@ -2,9 +2,10 @@
   "_readme": "Single source of truth for the India Datathon website. Edit this file, then run: python3 build.py",
 
   "site": {
-    "preview": true,
+    "preview": false,
     "_preview": "true = shows the 'Design preview' bar and tells search engines not to index. Set false only when the organizer has approved the public copy.",
-    "url": "https://pulkitchatwal.github.io/IndiaDatathon/site/",
+    "url": "https://indiadatathon.org/",
+    "credit": "Website designed and managed by Pulkit Chatwal",
     "_url": "Final public address, e.g. https://indiadatathon.org/ (used for share previews). Leave empty until the domain is confirmed.",
     "showCountdown": true
   },
@@ -46,7 +47,7 @@
 
   "signup": {
     "_mode": "off | demo | live.  off = no email form at all (the safe fallback).  demo = form is shown for design review and saves NOTHING.  live = posts the email to 'endpoint'.",
-    "mode": "demo",
+    "mode": "off",
     "endpoint": "",
     "_successState": "pending = service uses double opt-in ('check your email').  confirmed = address is subscribed immediately.",
     "successState": "pending",
@@ -152,7 +153,7 @@
     {
       "group": "Applying",
       "items": [
-        { "q": "When does registration open?", "a": "Registration opens in the second half of December 2026. Join the email notification list to hear when it opens. Joining the list does not reserve a place.", "q_open": "How do I register?", "a_open": "Registration is open. Fill in the participation form on this site. Apply individually; submitting the form does not by itself confirm a place.", "a_closed": "Registration is closed." },
+        { "q": "When does registration open?", "a": "Registration opens in the second half of December 2026. Join the email notification list to hear when it opens. Joining the list does not reserve a place.", "a_nosignup": "Registration opens in the second half of December 2026. The exact date will be announced on this page.", "q_open": "How do I register?", "a_open": "Registration is open. Fill in the participation form on this site. Apply individually; submitting the form does not by itself confirm a place.", "a_closed": "Registration is closed." },
         { "q": "Who can apply? Do I need to code?", "a": "Students and professionals from medical and data science/engineering backgrounds can apply. Medical participants do not need to code. Technical participants should know Python (preferred), R or SQL. Bring curiosity and a willingness to work with and learn from teammates with different expertise." },
         { "q": "Can I apply individually? How are teams formed?", "a": "Yes, apply as an individual. Organizers will form teams with a balanced mix of clinical knowledge and technical skills." },
         { "q": "What is the fee?", "a": "The fee amount is to be announced." }

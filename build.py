@@ -127,7 +127,7 @@ def build_blocks(c: dict) -> dict:
         b["og_urls"] = (
             f'<link rel="canonical" href="{e(base)}">\n  '
             f'<meta property="og:url" content="{e(base)}">\n  '
-            f'<meta property="og:image" content="{e(base)}assets/og-image.png">\n  '
+            f'<meta property="og:image" content="{e(base)}site/assets/og-image.png">\n  '
             '<meta property="og:image:width" content="1200">\n  '
             '<meta property="og:image:height" content="630">'
         )
@@ -158,7 +158,7 @@ def build_blocks(c: dict) -> dict:
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": item.get(f"q_{state}", item["q"]), "acceptedAnswer": {"@type": "Answer", "text": item.get(f"a_{state}", item["a"])}}
+            {"@type": "Question", "name": item.get(f"q_{state}", item["q"]), "acceptedAnswer": {"@type": "Answer", "text": (item.get("a_nosignup") if (state == "upcoming" and not signup_on and item.get("a_nosignup")) else item.get(f"a_{state}", item["a"]))}}
             for group in c["faqs"]
             for item in group["items"]
         ],
@@ -248,7 +248,9 @@ def build_blocks(c: dict) -> dict:
         else ""
     )
     b["registration_line"] = {
-        "upcoming": "<strong>Opens in the second half of December 2026</strong><span>Join the email list to hear when. Joining does not reserve a place.</span>",
+        "upcoming": "<strong>Opens in the second half of December 2026</strong><span>"
+        + ("Join the email list to hear when. Joining does not reserve a place." if signup_on else "The exact date will be announced on this page.")
+        + "</span>",
         "open": '<strong>Open now</strong><span><a href="#apply">Go to the participation form</a></span>',
         "waitlist": '<strong>Waitlist open</strong><span><a href="#apply">Join the waitlist</a></span>',
         "closed": "<strong>Closed</strong><span>Thank you for your interest</span>",
@@ -290,7 +292,9 @@ def build_blocks(c: dict) -> dict:
     # ---- how it works ---------------------------------------------------
     steps = {
         "upcoming": [
-            ("Get notified", "Registration opens in the second half of December 2026. Joining the email list does not reserve a place."),
+            ("Get notified", "Registration opens in the second half of December 2026. Joining the email list does not reserve a place.")
+            if signup_on
+            else ("Watch for the opening", "Registration opens in the second half of December 2026. The exact date will be announced on this page."),
             ("Apply individually", "Students and professionals apply on their own, not as a ready-made team."),
         ],
         "open": [
@@ -446,6 +450,8 @@ def build_blocks(c: dict) -> dict:
 
     # ---- FAQ -------------------------------------------------------------
     def faq_text(item: dict, key: str) -> str:
+        if not signup_on and f"{key}_nosignup" in item and state == "upcoming":
+            return item[f"{key}_nosignup"]
         return item.get(f"{key}_{state}", item[key])
 
     cols = []
@@ -479,6 +485,7 @@ def build_blocks(c: dict) -> dict:
     b["footer_contact"] = f'<div><h2>Contact</h2><ul>{"".join(rows)}</ul></div>'
     note = "Event details subject to final confirmation."
     b["footer_note"] = ("Design preview · " + note) if site["preview"] else note
+    b["credit"] = f'<span class="footer-credit">{e(site["credit"])}</span>' if site.get("credit") else ""
 
     # ---- dedicated form page (site/form.html) ---------------------------------
     google = re.fullmatch(r"(https://docs\.google\.com/forms/d/e/[A-Za-z0-9_-]+/viewform)(?:\?.*)?", reg["formUrl"] or "")
@@ -611,7 +618,7 @@ def build_apply(c: dict, state: str, signup_on: bool, form_live: bool, form_exte
     privacy = (
         f' <a href="{e(sign["privacyUrl"])}" target="_blank" rel="noopener">Privacy notice</a>'
         if sign["privacyUrl"]
-        else ' <span class="hint-inline">The privacy notice will be linked here before the form opens.</span>'
+        else ""
     )
     consent = (
         '<div class="field field-confirm field-wide"><label class="choice choice-confirm">'
@@ -622,7 +629,7 @@ def build_apply(c: dict, state: str, signup_on: bool, form_live: bool, form_exte
     if locked:
         out["apply_title"] = "The form opens soon."
         out["apply_lede"] = (
-            "Apply individually when registration opens. Below is a preview of what the form will ask, "
+            "Apply individually when registration opens. These are the questions the form will ask, "
             "so you can have your details ready."
         )
         out["apply_badge"] = '<span class="badge-soon">Coming soon</span>'
@@ -647,7 +654,7 @@ def build_apply(c: dict, state: str, signup_on: bool, form_live: bool, form_exte
             "</aside>"
         )
         banner = (
-            f'<p class="form-banner" id="apply-locked-note">{icon("lock")}<span><strong>Preview only.</strong> '
+            f'<p class="form-banner" id="apply-locked-note">{icon("lock")}<span><strong>Not open yet.</strong> '
             "This form is not accepting responses yet.</span></p>"
         )
         form_attrs = 'class="p-form is-locked reveal" aria-describedby="apply-locked-note" data-participation-form="locked"'
@@ -789,6 +796,16 @@ def main() -> None:
             sys.exit(f"Build stopped: link to #{target} has no matching section.")
 
     (SITE / "index.html").write_text(html, encoding="utf-8")
+    # The published copy at the repository root, so the site opens at the bare domain
+    # (https://indiadatathon.org/) instead of /site/. Same page, asset paths pointed into site/.
+    root_html = re.sub(r'(\s(?:src|href))="assets/', r'\1="site/assets/', html)
+    assert 'src="assets/' not in root_html and 'href="assets/' not in root_html
+    (ROOT / "index.html").write_text(root_html, encoding="utf-8")
+    if not content["site"]["preview"]:
+        scan = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S)))
+        for word in ("design preview", "demonstrat", "save nothing", "saves nothing", "proposed", "developer", "draft", "await final approval"):
+            if word in scan.lower():
+                sys.exit(f"Build stopped: the public page still contains {word!r}.")
     if form_page:
         (SITE / "form.html").write_text(form_page, encoding="utf-8")
     elif (SITE / "form.html").exists():

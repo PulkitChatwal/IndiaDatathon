@@ -19,11 +19,14 @@ Publish the `site/` folder only.
 
 ## Live site
 
-https://pulkitchatwal.github.io/IndiaDatathon/ (it forwards to `/site/`).
+https://indiadatathon.org/ is served by GitHub Pages from the `main` branch of this repository
+(`CNAME` holds the domain). The build writes the page twice: `site/index.html` for local work and
+`index.html` at the repository root, the copy visitors get at the bare domain (its asset paths point
+into `site/assets/`). To publish changes: rebuild, commit, and push `main` (or run `./deploy.sh`).
 
-GitHub Pages serves the `main` branch of this repository. The page at the repository root only
-forwards visitors to the `site/` folder, which is the website. To publish changes: rebuild,
-commit, and push `main` (or run `./deploy.sh`).
+The domain is registered with Wix; its DNS records at Wix point to GitHub Pages:
+four A records for the bare domain (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
+and a CNAME record `www` → `pulkitchatwal.github.io`.
 
 ## Make a change
 
