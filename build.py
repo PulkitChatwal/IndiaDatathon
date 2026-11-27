@@ -53,6 +53,7 @@ ICONS = {
     "database": '<ellipse cx="12" cy="6" rx="7.5" ry="3"/><path d="M4.5 6v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3V6M4.5 12v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/>',
     "route": '<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H14a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h5.5"/>',
     "sparkle": '<path d="m12 3.5 1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7L5.5 10l4.7-1.8zM18.5 15.5v4M16.5 17.5h4"/>',
+    "globe": '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
     "plus": '<path d="M12 5v14M5 12h14"/>',
 }
 
@@ -492,7 +493,21 @@ def build_blocks(c: dict) -> dict:
             sys.exit(f"site.creditLinks: {link['label']} must be an https:// or mailto: link")
         extra = "" if url.startswith("mailto:") else ' target="_blank" rel="noopener"'
         new_tab = "" if url.startswith("mailto:") else '<span class="sr-only"> (opens in a new tab)</span>'
-        credit_links.append(f'<a href="{e(url)}"{extra}>{e(link["label"])}{new_tab}</a>')
+        if url.startswith("mailto:"):
+            glyph = icon("mail")
+        elif "linkedin.com" in url:
+            glyph = (
+                '<svg class="icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">'
+                '<path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05'
+                'c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56'
+                'v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>'
+            )
+        else:
+            glyph = icon("globe")
+        tip = {"Email": "Email Pulkit Chatwal", "LinkedIn": "Pulkit Chatwal on LinkedIn", "Website": "Pulkit Chatwal's website"}.get(link["label"], link["label"])
+        credit_links.append(
+            f'<a href="{e(url)}"{extra} title="{e(tip)}" aria-label="{e(tip)}{"" if url.startswith("mailto:") else " (opens in a new tab)"}">{glyph}</a>'
+        )
     b["credit"] = (
         f'<span class="footer-credit">{e(site["credit"])}'
         + (f'<span class="credit-links">{"".join(credit_links)}</span>' if credit_links else "")
